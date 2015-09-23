@@ -1,0 +1,34 @@
+{
+  "name": "fd-chunk-store",
+  "version": "1.0.0",
+  "description": "chunk store for a single file",
+  "main": "index.js",
+  "scripts": {
+    "coverage": "covert test/*.js",
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/substack/fd-chunk-store.git"
+  },
+  "keywords": [
+    "chunk store",
+    "chunk",
+    "store"
+  ],
+  "author": "substack",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/substack/fd-chunk-store/issues"
+  },
+  "homepage": "https://github.com/substack/fd-chunk-store#readme",
+  "dependencies": {
+    "defined": "^1.0.0",
+    "inherits": "^2.0.1"
+  },
+  "devDependencies": {
+    "abstract-chunk-store": "^1.1.8",
+    "covert": "^1.1.0",
+    "tape": "^4.2.0"
+  }
+}
