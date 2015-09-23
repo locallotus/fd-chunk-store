@@ -52,7 +52,7 @@ Close the underlying file descriptor.
 # install
 
 ```
-npm install fs-remainder-chunk-store
+npm install fd-chunk-store
 ```
 
 # license
