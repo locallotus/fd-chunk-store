@@ -73,6 +73,10 @@ FS.prototype.destroy = ready(function (cb) {
   fs.close(this.fd, cb)
 })
 
+FS.prototype.close = ready(function (cb) {
+  fs.close(this.fd, cb)
+})
+
 function noop () {}
 function tick (cb, err) {
   if (cb) process.nextTick(function () { cb(err) })
