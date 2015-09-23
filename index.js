@@ -35,25 +35,6 @@ function ready (f) {
   }
 }
 
-FS.prototype.createWriteStream = function (opts) {
-  var self = this
-  if (!opts) opts = {}
-  var offset = opts.start || 0
-  if (!self.fd) {
-    var dup = duplexify()
-    self.once('open', function () {
-      dup.setWritable(self.createWriteStream(opts))
-    })
-    return dup
-  }
-  var w = new Writable
-  w._write = function (buf, enc, next) {
-    fs.write(self.fd, buf, 0, buf.length, offset, next)
-    offset += buf.length
-  }
-  return w
-}
-
 FS.prototype.get = ready(function (n, opts, cb) {
   if (typeof opts === 'function') {
     cb = opts
