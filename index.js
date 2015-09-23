@@ -17,12 +17,8 @@ function FS (size, opts) {
     if (err && err.code === 'ENOENT') {
       return fs.open(opts.path, 'w+', onopen)
     }
-    fs.fstat(fd, function (err, stat) {
-      self.filesize = stat.size
-      self.fd = fd
-      self.emit('open')
-      self.emit('size', stat.size)
-    })
+    self.fd = fd
+    self.emit('open')
   })
 }
 
